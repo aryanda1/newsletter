@@ -11,7 +11,7 @@ function submitForm(event) {
   myForm.reset();
   container.classList.remove("active");
   container.classList.add("hidden");
-  sucess_container.style.display = "flex";
+  // sucess_container.style.display = "flex";
   sucess_container.classList.remove("hidden");
   setTimeout(() => {
     sucess_container.classList.add("active");
@@ -25,11 +25,12 @@ const email_id = document.getElementById("email");
 const container = document.getElementsByClassName("container")[0];
 
 const sucess_container = document.getElementsByClassName("success-cont")[0];
-sucess_container.style.display = "none";
+
 function dismiss() {
-  sucess_container.style.display = "none";
+  // sucess_container.style.display = "none";
   sucess_container.classList.remove("active");
   sucess_container.classList.add("hidden");
+  // container.style.display = "grid";
   container.classList.remove("hidden");
   setTimeout(() => container.classList.add("active"), 300);
 }
