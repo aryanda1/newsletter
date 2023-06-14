@@ -14,15 +14,26 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: hsl(235, 18%, 26%);
+}
+
 .content {
   overflow: hidden;
 }
 
 .container {
   width: 100%;
+  max-width: 400px;
   display: grid;
   font-size: 1.5rem;
   background-color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .img img {
@@ -46,34 +57,6 @@ body {
   padding-right: 5rem;
   margin-bottom: 3rem;
 }
-
-/* ul {
-  list-style-type: relative;
-  list-style: none;
-  margin-left: 2rem;
-  padding-left: 1.2em;
-} */
-
-/* li::before {
-  content: url("assets/images/icon-list.svg");
-  vertical-align: middle;
-  position: absolute;
-  left: 2rem;
-} */
-/* li::before {
-    content: url("assets/images/icon-list.svg");;
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-
-    margin-right: 1rem;
-  }
-  
-
-li {
-  margin-bottom: 1rem;
-} */
 
 ul {
   list-style: none;
@@ -151,7 +134,7 @@ li:before {
   cursor: pointer;
   margin: 2rem 0;
   width: 100%;
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .submit:hover {
@@ -161,17 +144,32 @@ li:before {
 
 .success-cont {
   background-color: white;
-  display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
+  max-width: 400px;
+  display: flex;
   height: 100vh;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.active {
+  opacity: 1;
+}
+
+.hidden {
+  height: 0;
+  display: none;
+  width: 0;
+  opacity: 0;
 }
 
 .success {
-  padding: 2.2rem 4rem 2.2rem 2.2rem;
+  padding: 2.2rem;
   font-size: 1.5rem;
   line-height: 1.5;
+  width: 100%;
 }
 
 .success h1 {
@@ -189,17 +187,11 @@ li:before {
 .dismiss {
   position: fixed;
   bottom: 4rem;
-  width: calc(100% - 6rem);
+  width: calc(100% - 4.4rem);
+  max-width: calc(400px - 4.4rem);
 }
 
-@media (min-width: 600px) {
-  main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: hsl(235, 18%, 26%);
-  }
+@media (min-width: 740px) {
   .container {
     width: 800px;
     max-width: 90%;
@@ -232,11 +224,10 @@ li:before {
     padding: 8rem 4rem 2rem 4rem;
   }
 
-  .dismiss{
+  .dismiss {
     position: relative;
     top: 0rem;
     width: 100%;
+    max-width: 100%;
   }
-  /* CSS styles for resolutions above 768 pixels */
-  /* Add your styles here */
 }
